@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+  <header>
+
+    <img src="./images/logo.svg" alt="Logo solo" height="30">
+
+    <nav>
+      <img class="menu-icon" src="./images/icon-close-menu.svg" alt="">
+      <div class="menu">
+        <!--      <img src="./images/logo.svg" alt="Logo solo" height="30">-->
+        <ul>
+          <li>
+            <button>
+              Features
+              <img class="arrow-icon" src="./images/icon-arrow-down.svg" alt="">
+            </button>
+            <div class="dropdown-menu">
+              <a href="#">
+                <img src="./images/icon-todo.svg" alt="">
+                <span>Todo List</span>
+              </a>
+              <a href="#">
+                <img src="./images/icon-calendar.svg" alt="">
+                <span>Calendar</span>
+              </a>
+              <a href="#">
+                <img src="./images/icon-reminders.svg" alt="">
+                <span>Reminders</span>
+              </a>
+              <a href="#">
+                <img src="./images/icon-planning.svg" alt="">
+                <span>Planning</span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <button>
+              Company
+              <img class="arrow-icon" src="./images/icon-arrow-down.svg" alt="">
+            </button>
+            <div class="dropdown-menu">
+              <a href="#">History</a>
+              <a href="#">Our Team</a>
+              <a href="#">Blog</a>
+            </div>
+          </li>
+          <li>
+            <button disabled>
+              Careers
+            </button>
+
+          </li>
+          <li>
+            <button>
+              About
+            </button>
+
+          </li>
+        </ul>
+      </div>
+      <div class="login">
+        <ul>
+          <li>Login</li>
+          <li class="register-button gen-button">Register</li>
+        </ul>
+      </div>
+    </nav>
+
+    <img class="menu-icon" src="./images/icon-menu.svg" alt="">
+  </header>
+
+
+
+  <main>
+
+    <article>
+      <section>
+        <h1>Make <br>remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. <br>
+          Streamline processes,
+           create team rituals, and watch productivity soar.
+        </p>
+        <button class="gen-button">Learn more</button>
+      </section>
+
+      <footer>
+        <figure><img src="./images/client-databiz.svg" alt="Logo databiz"></figure>
+        <figure><img src="./images/client-audiophile.svg" alt="Logo audiophile"></figure>
+        <figure><img src="./images/client-meet.svg" alt="Logo meet"></figure>
+        <figure><img src="./images/client-maker.svg" alt="Logo maker"></figure>
+      </footer>
+    </article>
+
+    <figure>
+      <picture>
+        <source media="(max-width: 640)" srcset="./images/image-hero-mobile.png">
+<!--        <source media="(min-width: 1000px)" srcset="./images/image-hero-mobile.png">-->
+        <img src="./images/image-hero-desktop.png" alt="Image Hero">
+      </picture>
+    </figure>
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

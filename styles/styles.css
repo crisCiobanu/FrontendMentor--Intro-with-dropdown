@@ -80,6 +80,13 @@ body header nav {
     padding: 1rem 2rem;
 
     color: var(--color-medium-grey);
+
+    transition: all 0.3s ease;
+
+}
+
+body header nav[data-visible="false"]{
+    transform: translateX(100%);
 }
 
 ul {
@@ -112,16 +119,14 @@ ul li button{
     gap: 0.5rem;
 }
 
-ul li:hover .dropdown-menu{
+.menu ul li button:focus + .dropdown-menu{
     display: flex;
-    transition: all 0.3s ease;
 }
 
 .arrow-icon{
     transition: all 0.3s ease;
 }
-
-ul li:hover .arrow-icon{
+.menu ul li button:focus .arrow-icon{
     transform: rotate(180deg);
 }
 
@@ -153,10 +158,6 @@ ul li:hover .arrow-icon{
 .dropdown-menu a:hover{
     color: var(--color-almost-black);
 }
-
-/*.dropdown-menu:focus{*/
-/*    display: flex;*/
-/*}*/
 
 .menu {
     display: flex;
@@ -208,7 +209,7 @@ main article section p {
 }
 
 main article section h1{
-    font-size: 4rem;
+    font-size: 5.5rem;
     line-height: normal;
 }
 
@@ -225,33 +226,61 @@ main article section button:hover{
 main article footer {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
+
+    margin: 4rem 0;
 }
 
 .register-button {
     border: solid var(--color-almost-black) 1px;
 }
 
+.dark-layer {
+    display: none;
+    content: "";
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 900;
+    transition: all 0.15s ease;
+
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.dark-layer[data-visible="true"]{
+    transform: translateX(100%);
+}
+
 @media (max-width: 1000px) {
 
-    .menu-icon{
+    .close-menu-icon, .menu-icon{
         display: block;
-        width: 3rem;
+        width: 2rem;
         aspect-ratio: 1;
-
         align-self: flex-end;
+        cursor: pointer;
     }
+
+    body header {
+        justify-content: space-between;
+    }
+
 
     body header nav {
         position: fixed;
         right: 0;
         top: 0;
-        min-width: 20rem;
+        min-width: 10rem;
         height: 100vh;
 
         flex-direction: column;
         justify-content: flex-start;
         gap: 2rem;
         background-color: whitesmoke;
+
+        z-index: 901;
     }
 
     .menu{
@@ -278,6 +307,8 @@ main article footer {
 
         position: relative;
 
+        left: 1rem;
+
         padding: 1rem;
 
         z-index: 0;
@@ -285,8 +316,9 @@ main article footer {
         box-shadow: none;
     }
 
-
-
+    .dark-layer{
+        display: block;
+    }
 
 }
 
@@ -294,10 +326,25 @@ main article footer {
     main {
         display: flex;
         flex-direction: column;
+
+        padding: 2rem;
     }
 
     main figure {
         order: -1;
+    }
+
+    main article section {
+        align-items: center;
+        padding-top: 4rem;
+    }
+
+    main article section h1 {
+        font-size: 2rem;
+    }
+
+    body main article section p {
+        text-align: center;
     }
 
 
